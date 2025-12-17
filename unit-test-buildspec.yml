@@ -5,8 +5,8 @@ phases:
     runtime-versions:
       nodejs: 20
     commands:
-      - apt-get update
-      - apt-get install -y chromium-browser
+      - yum update -y
+      - yum install -y chromium
       - npm ci
 
   build:
