@@ -5,10 +5,12 @@ phases:
     runtime-versions:
       nodejs: 20
     commands:
-      - yum update -y
-      - yum install -y chromium
-      - npm ci
+      - npm install -g @angular/cli@17
+
+  pre_build:
+    commands:
+      - npm install
 
   build:
     commands:
-      - npx ng test --no-watch --no-progress --browsers=ChromeHeadlessCI
+      - ng test --no-watch --no-progress --browsers=ChromeHeadlessCI
